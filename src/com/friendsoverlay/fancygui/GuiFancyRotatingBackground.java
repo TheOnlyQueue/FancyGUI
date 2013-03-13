@@ -95,12 +95,8 @@ public class GuiFancyRotatingBackground extends GuiScreen {
                     GL11.glRotatef(-90.0F, 1.0F, 0.0F, 0.0F);
                 }
 
-                GL11.glBindTexture(
-                        GL11.GL_TEXTURE_2D,
-                        mc.renderEngine.getTexture((new StringBuilder())
-                                .append("/title/bg/panorama").append(var10)
-                                .append(".png").toString()));
-                var4.startDrawingQuads();
+                mc.renderEngine.func_98187_b((new StringBuilder()).append("/title/bg/panorama").append(var10).append(".png").toString());
+				var4.startDrawingQuads();
                 var4.setColorRGBA_I(16777215, 255 / (var6 + 1));
                 float var11 = 0.0F;
                 var4.addVertexWithUV(-1.0D, -1.0D, 1.0D,

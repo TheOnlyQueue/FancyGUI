@@ -1,4 +1,4 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.src.*;
 import org.lwjgl.input.Keyboard;
 
 import net.minecraft.client.Minecraft;
@@ -27,11 +28,14 @@ public class GuiFancyFlatPresets extends GuiFancyScreen {
     private GuiTextField theTextField;
     private GuiFancyRotatingBackground bg;
     public final Minecraft mc;
+	public final Float zLevel;
 	
 	public GuiFancyFlatPresets(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
 		createFlatWorldGui = null;
         this.mc = mc;
+		this.fontRenderer = super.fontRenderer;
+		this.zLevel = super.zLevel;
 	}
 	
     public GuiFancyFlatPresets(GuiFancyCreateFlatWorld par1)
@@ -45,7 +49,7 @@ public class GuiFancyFlatPresets extends GuiFancyScreen {
      */
     public void initGui()
     {
-        this.controlList.clear();
+        this.buttonList.clear();
         Keyboard.enableRepeatEvents(true);
         this.field_82300_d = StatCollector.translateToLocal("createWorld.customize.presets.title");
         this.field_82308_m = StatCollector.translateToLocal("createWorld.customize.presets.share");
@@ -54,8 +58,8 @@ public class GuiFancyFlatPresets extends GuiFancyScreen {
         this.theFlatPresetsListSlot = new GuiFancyFlatPresetsListSlot(this);
         this.theTextField.setMaxStringLength(1230);
         this.theTextField.setText(this.createFlatWorldGui.getFlatGeneratorInfo());
-        this.controlList.add(this.theButton = new GuiFancyButton(0, this.width / 2 - 80, this.height - 28, StatCollector.translateToLocal("createWorld.customize.presets.select"), 3));
-        this.controlList.add(new GuiFancyButton(1, this.width / 2 + 80, this.height - 28, 150, 20, StatCollector.translateToLocal("gui.cancel"), 3));
+        this.buttonList.add(this.theButton = new GuiFancyButton(0, this.width / 2 - 80, this.height - 28, StatCollector.translateToLocal("createWorld.customize.presets.select"), 3));
+        this.buttonList.add(new GuiFancyButton(1, this.width / 2 + 80, this.height - 28, 150, 20, StatCollector.translateToLocal("gui.cancel"), 3));
         this.func_82296_g();
         bg = new GuiFancyRotatingBackground(mc, width, height, zLevel);
     }
@@ -173,7 +177,7 @@ public class GuiFancyFlatPresets extends GuiFancyScreen {
             }
         }
 
-        presets.add(new GuiFlatPresetsItem(par1, par0Str, var5.toString()));
+        presets.add(new GuiFancyFlatPresetsItem(par1, par0Str, var5.toString()));
     }
 
     /**

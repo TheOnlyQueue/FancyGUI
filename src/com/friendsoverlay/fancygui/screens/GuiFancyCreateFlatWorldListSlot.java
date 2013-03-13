@@ -1,5 +1,6 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
+import net.minecraft.src.*;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
@@ -27,7 +28,7 @@ public class GuiFancyCreateFlatWorldListSlot extends GuiFancySlot {
         if (par3ItemStack != null)
         {
             RenderHelper.enableGUIStandardItemLighting();
-            GuiCreateFlatWorld.getRenderItem().renderItemIntoGUI(this.createFlatWorldGui.fontRenderer, this.createFlatWorldGui.mc.renderEngine, par3ItemStack, par1 + 2, par2 + 2);
+            GuiFancyCreateFlatWorld.getRenderItem().renderItemIntoGUI(Minecraft.getMinecraft().fontRenderer, this.createFlatWorldGui.mc.renderEngine, par3ItemStack, par1 + 2, par2 + 2);
             RenderHelper.disableStandardItemLighting();
         }
 
@@ -41,10 +42,9 @@ public class GuiFancyCreateFlatWorldListSlot extends GuiFancySlot {
 
     private void func_82450_b(int par1, int par2, int par3, int par4)
     {
-        int var5 = this.createFlatWorldGui.mc.renderEngine.getTexture("/gui/slot.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.createFlatWorldGui.mc.renderEngine.bindTexture(var5);
-        Tessellator var10 = Tessellator.instance;
+		this.createFlatWorldGui.mc.renderEngine.func_98187_b("/gui/slot.png");
+		Tessellator var10 = Tessellator.instance;
         var10.startDrawingQuads();
         var10.addVertexWithUV((double)(par1 + 0), (double)(par2 + 18), (double)this.createFlatWorldGui.zLevel, (double)((float)(par3 + 0) * 0.0078125F), (double)((float)(par4 + 18) * 0.0078125F));
         var10.addVertexWithUV((double)(par1 + 18), (double)(par2 + 18), (double)this.createFlatWorldGui.zLevel, (double)((float)(par3 + 18) * 0.0078125F), (double)((float)(par4 + 18) * 0.0078125F));
@@ -86,7 +86,7 @@ public class GuiFancyCreateFlatWorldListSlot extends GuiFancySlot {
         ItemStack var7 = var6.getFillBlock() == 0 ? null : new ItemStack(var6.getFillBlock(), 1, var6.getFillBlockMeta());
         String var8 = var7 == null ? "Air" : Item.itemsList[var6.getFillBlock()].func_77653_i(var7);
         this.func_82452_a(par2, par3, var7);
-        this.createFlatWorldGui.fontRenderer.drawString(var8, par2 + 18 + 5, par3 + 3, 16777215);
+        Minecraft.getMinecraft().fontRenderer.drawString(var8, par2 + 18 + 5, par3 + 3, 16777215);
         String var9;
 
         if (par1 == 0)
@@ -102,7 +102,7 @@ public class GuiFancyCreateFlatWorldListSlot extends GuiFancySlot {
             var9 = StatCollector.translateToLocalFormatted("createWorld.customize.flat.layer", new Object[] {Integer.valueOf(var6.getLayerCount())});
         }
 
-        this.createFlatWorldGui.fontRenderer.drawString(var9, par2 + 2 + 213 - this.createFlatWorldGui.fontRenderer.getStringWidth(var9), par3 + 3, 16777215);
+        Minecraft.getMinecraft().fontRenderer.drawString(var9, par2 + 2 + 213 - Minecraft.getMinecraft().fontRenderer.getStringWidth(var9), par3 + 3, 16777215);
     }
 
     protected int getScrollBarX()

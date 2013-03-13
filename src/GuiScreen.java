@@ -25,8 +25,8 @@ public class GuiScreen extends Gui
     /** The height of the screen object. */
     public int height;
 
-    /** A list of all the controls added to this container. */
-    protected List controlList = new ArrayList();
+    /** A list of all the buttons in this container. */
+    protected List buttonList = new ArrayList();
     public boolean allowUserInput = false;
 
     /** The FontRenderer used by GuiScreen */
@@ -44,12 +44,10 @@ public class GuiScreen extends Gui
      */
     public void drawScreen(int par1, int par2, float par3)
     {
-    	if (com.friendsoverlay.fancygui.FancyGUI.replaceScreen(mc, mc.currentScreen)) {
-    		return;
-    	}
-        for (int var4 = 0; var4 < this.controlList.size(); ++var4)
+        if (com.friendsoverlay.fancygui.FancyGUI.replaceScreen(mc, mc.currentScreen)) return;
+        for (int var4 = 0; var4 < this.buttonList.size(); ++var4)
         {
-            GuiButton var5 = (GuiButton)this.controlList.get(var4);
+            GuiButton var5 = (GuiButton)this.buttonList.get(var4);
             var5.drawButton(this.mc, par1, par2);
         }
     }
@@ -111,9 +109,9 @@ public class GuiScreen extends Gui
     {
         if (par3 == 0)
         {
-            for (int var4 = 0; var4 < this.controlList.size(); ++var4)
+            for (int var4 = 0; var4 < this.buttonList.size(); ++var4)
             {
-                GuiButton var5 = (GuiButton)this.controlList.get(var4);
+                GuiButton var5 = (GuiButton)this.buttonList.get(var4);
 
                 if (var5.mousePressed(this.mc, par1, par2))
                 {
@@ -156,7 +154,7 @@ public class GuiScreen extends Gui
         this.fontRenderer = par1Minecraft.fontRenderer;
         this.width = par2;
         this.height = par3;
-        this.controlList.clear();
+        this.buttonList.clear();
         this.initGui();
     }
 
@@ -210,7 +208,7 @@ public class GuiScreen extends Gui
             this.field_85042_b = -1;
             this.mouseMovedOrUp(var1, var2, Mouse.getEventButton());
         }
-        else if (this.mc.gameSettings.touchscreen && this.field_85042_b != -1 && this.field_85043_c > 0L)
+        else if (this.field_85042_b != -1 && this.field_85043_c > 0L)
         {
             long var3 = Minecraft.getSystemTime() - this.field_85043_c;
             this.func_85041_a(var1, var2, this.field_85042_b, var3);
@@ -280,7 +278,7 @@ public class GuiScreen extends Gui
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glDisable(GL11.GL_FOG);
         Tessellator var2 = Tessellator.instance;
-        GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.mc.renderEngine.getTexture("/gui/background.png"));
+        this.mc.renderEngine.func_98187_b("/gui/background.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         float var3 = 32.0F;
         var2.startDrawingQuads();

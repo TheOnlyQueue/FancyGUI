@@ -1,7 +1,8 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import net.minecraft.client.Minecraft;
 import com.friendsoverlay.fancygui.*;
+import net.minecraft.src.*;
 
 public class GuiFancyYesNo extends GuiFancyScreen {
 	/**
@@ -40,9 +41,9 @@ public class GuiFancyYesNo extends GuiFancyScreen {
 	 * Adds the buttons (and other controls) to the screen in question.
 	 */
 	public void initGui() {
-		this.controlList.add(new GuiFancyButton(0, this.width / 2 - 80,
+		this.buttonList.add(new GuiFancyButton(0, this.width / 2 - 80,
 				this.height / 6 + 96, this.buttonText1, 3));
-		this.controlList.add(new GuiFancyButton(1, this.width / 2 + 80,
+		this.buttonList.add(new GuiFancyButton(1, this.width / 2 + 80,
 				this.height / 6 + 96, this.buttonText2, 3));
 		bg = new GuiFancyRotatingBackground(mc, width, height, zLevel);
 	}

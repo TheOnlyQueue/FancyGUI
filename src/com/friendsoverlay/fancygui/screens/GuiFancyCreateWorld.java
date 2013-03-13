@@ -1,7 +1,8 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import java.util.Random;
 
+import net.minecraft.src.*;
 import org.lwjgl.input.Keyboard;
 
 import net.minecraft.client.Minecraft;
@@ -98,20 +99,20 @@ public class GuiFancyCreateWorld extends GuiFancyScreen {
     {
         StringTranslate var1 = StringTranslate.getInstance();
         Keyboard.enableRepeatEvents(true);
-        this.controlList.clear();
-        this.controlList.add(new GuiFancyButton(0, this.width / 2 - 75, this.height - 28, 150, 20, var1.translateKey("selectWorld.create"), 3));
-        this.controlList.add(new GuiFancyButton(1, this.width / 2 + 75, this.height - 28, 150, 20, var1.translateKey("gui.cancel"), 3));
-        this.controlList.add(this.buttonGameMode = new GuiFancyButton(2, this.width / 2, 115, var1.translateKey("selectWorld.gameMode"), 3));
-        this.controlList.add(this.moreWorldOptions = new GuiFancyButton(3, this.width / 2, 187, var1.translateKey("selectWorld.moreWorldOptions"), 3));
-        this.controlList.add(this.buttonGenerateStructures = new GuiFancyButton(4, this.width / 2 - 80, 100, var1.translateKey("selectWorld.mapFeatures"), 3));
+        this.buttonList.clear();
+        this.buttonList.add(new GuiFancyButton(0, this.width / 2 - 75, this.height - 28, 150, 20, var1.translateKey("selectWorld.create"), 3));
+        this.buttonList.add(new GuiFancyButton(1, this.width / 2 + 75, this.height - 28, 150, 20, var1.translateKey("gui.cancel"), 3));
+        this.buttonList.add(this.buttonGameMode = new GuiFancyButton(2, this.width / 2, 115, var1.translateKey("selectWorld.gameMode"), 3));
+        this.buttonList.add(this.moreWorldOptions = new GuiFancyButton(3, this.width / 2, 187, var1.translateKey("selectWorld.moreWorldOptions"), 3));
+        this.buttonList.add(this.buttonGenerateStructures = new GuiFancyButton(4, this.width / 2 - 80, 100, var1.translateKey("selectWorld.mapFeatures"), 3));
         this.buttonGenerateStructures.drawButton = false;
-        this.controlList.add(this.buttonBonusItems = new GuiFancyButton(7, this.width / 2 + 80, 151, var1.translateKey("selectWorld.bonusItems"), 3));
+        this.buttonList.add(this.buttonBonusItems = new GuiFancyButton(7, this.width / 2 + 80, 151, var1.translateKey("selectWorld.bonusItems"), 3));
         this.buttonBonusItems.drawButton = false;
-        this.controlList.add(this.buttonWorldType = new GuiFancyButton(5, this.width / 2 + 80, 100, var1.translateKey("selectWorld.mapType"), 3));
+        this.buttonList.add(this.buttonWorldType = new GuiFancyButton(5, this.width / 2 + 80, 100, var1.translateKey("selectWorld.mapType"), 3));
         this.buttonWorldType.drawButton = false;
-        this.controlList.add(this.buttonAllowCommands = new GuiFancyButton(6, this.width / 2 - 80, 151, 150, 20, var1.translateKey("selectWorld.allowCommands"), 3));
+        this.buttonList.add(this.buttonAllowCommands = new GuiFancyButton(6, this.width / 2 - 80, 151, 150, 20, var1.translateKey("selectWorld.allowCommands"), 3));
         this.buttonAllowCommands.drawButton = false;
-        this.controlList.add(this.buttonCustomize = new GuiFancyButton(8, this.width / 2 + 80, 120, 150, 20, var1.translateKey("selectWorld.customizeType"), 3));
+        this.buttonList.add(this.buttonCustomize = new GuiFancyButton(8, this.width / 2 + 80, 120, 150, 20, var1.translateKey("selectWorld.customizeType"), 3));
         this.buttonCustomize.drawButton = false;
         this.textboxWorldName = new GuiTextField(this.fontRenderer, this.width / 2 - 100, 60, 200, 20);
         this.textboxWorldName.setFocused(true);
@@ -420,10 +421,10 @@ public class GuiFancyCreateWorld extends GuiFancyScreen {
 
         if (par1 == 13)
         {
-            this.actionPerformed((GuiButton)this.controlList.get(0));
+            this.actionPerformed((GuiButton) this.buttonList.get(0));
         }
 
-        ((GuiButton)this.controlList.get(0)).enabled = this.textboxWorldName.getText().length() > 0;
+        ((GuiButton)this.buttonList.get(0)).enabled = this.textboxWorldName.getText().length() > 0;
         this.makeUseableName();
     }
 

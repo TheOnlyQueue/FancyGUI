@@ -1,7 +1,8 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import com.friendsoverlay.fancygui.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.src.*;
 
 import java.net.URI;
 
@@ -18,8 +19,8 @@ public class GuiFancyNoFriendsOverlay extends GuiFancyScreen {
     @Override
     public void initGui() {
         bg = new GuiFancyRotatingBackground(mc, width, height, zLevel);
-        this.controlList.add(new GuiFancyButton(0, this.width / 2, this.height - 38, "Back", 3));
-        this.controlList.add(new GuiFancyButton(1, this.width / 2, this.height - 58, "Open in Browser", 3));
+        this.buttonList.add(new GuiFancyButton(0, this.width / 2, this.height - 38, "Back", 3));
+        this.buttonList.add(new GuiFancyButton(1, this.width / 2, this.height - 58, "Open in Browser", 3));
     }
 
     @Override

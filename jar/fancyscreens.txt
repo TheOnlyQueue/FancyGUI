@@ -1,5 +1,5 @@
-GuiMainMenu:GuiFancyMainMenu
-GuiSelectWorld:GuiFancySelectWorld
-GuiRenameWorld:GuiFancyRenameWorld
-GuiYesNo:GuiFancyYesNo
-GuiCreateWorld:GuiFancyCreateWorld
+GuiMainMenu:com.friendsoverlay.fancygui.screens.GuiFancyMainMenu
+GuiSelectWorld:com.friendsoverlay.fancygui.screens.GuiFancySelectWorld
+GuiRenameWorld:com.friendsoverlay.fancygui.screens.GuiFancyRenameWorld
+GuiYesNo:com.friendsoverlay.fancygui.screens.GuiFancyYesNo
+GuiCreateWorld:com.friendsoverlay.fancygui.screens.GuiFancyCreateWorld

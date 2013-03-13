@@ -1,7 +1,8 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import net.minecraft.client.Minecraft;
 import com.friendsoverlay.fancygui.*;
+import net.minecraft.src.*;
 
 public class GuiFancyCreateFlatWorld extends GuiFancyScreen {
 
@@ -17,11 +18,13 @@ public class GuiFancyCreateFlatWorld extends GuiFancyScreen {
     private GuiButton buttonRemoveLayer;
     private GuiFancyRotatingBackground bg;
     public final Minecraft mc;
+	public final Float zLevel;
     
 	public GuiFancyCreateFlatWorld(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
 		createWorldGui = null;
         this.mc = mc;
+		this.zLevel = super.zLevel;
 	}
 	
     public GuiFancyCreateFlatWorld(GuiFancyCreateWorld par1, String par2Str)
@@ -30,6 +33,7 @@ public class GuiFancyCreateFlatWorld extends GuiFancyScreen {
         this.createWorldGui = par1;
         this.setFlatGeneratorInfo(par2Str);
         this.mc = Minecraft.getMinecraft();
+		this.zLevel = super.zLevel;
     }
 
     public String getFlatGeneratorInfo()
@@ -47,18 +51,18 @@ public class GuiFancyCreateFlatWorld extends GuiFancyScreen {
      */
     public void initGui()
     {
-        this.controlList.clear();
+        this.buttonList.clear();
         this.customizationTitle = StatCollector.translateToLocal("createWorld.customize.flat.title");
         this.layerMaterialLabel = StatCollector.translateToLocal("createWorld.customize.flat.tile");
         this.heightLabel = StatCollector.translateToLocal("createWorld.customize.flat.height");
         
         this.createFlatWorldListSlotGui = new GuiFancyCreateFlatWorldListSlot(this);
-        this.controlList.add(this.buttonAddLayer = new GuiFancyButton(2, this.width / 2 - 80, this.height - 52, StatCollector.translateToLocal("createWorld.customize.flat.addLayer") + " (NYI)", 3));
-        this.controlList.add(this.buttonEditLayer = new GuiFancyButton(3, this.width / 2 + 80, this.height - 52, StatCollector.translateToLocal("createWorld.customize.flat.editLayer") + " (NYI)", 3));
-        this.controlList.add(this.buttonRemoveLayer = new GuiFancyButton(4, this.width / 2 - 80, this.height - 52, 150, 20, StatCollector.translateToLocal("createWorld.customize.flat.removeLayer"), 3));
-        this.controlList.add(new GuiFancyButton(0, this.width / 2 - 80, this.height - 28, StatCollector.translateToLocal("gui.done"), 3));
-        this.controlList.add(new GuiFancyButton(5, this.width / 2 + 80, this.height - 52, StatCollector.translateToLocal("createWorld.customize.presets"), 3));
-        this.controlList.add(new GuiFancyButton(1, this.width / 2 + 80, this.height - 28, StatCollector.translateToLocal("gui.cancel"), 3));
+        this.buttonList.add(this.buttonAddLayer = new GuiFancyButton(2, this.width / 2 - 80, this.height - 52, StatCollector.translateToLocal("createWorld.customize.flat.addLayer") + " (NYI)", 3));
+        this.buttonList.add(this.buttonEditLayer = new GuiFancyButton(3, this.width / 2 + 80, this.height - 52, StatCollector.translateToLocal("createWorld.customize.flat.editLayer") + " (NYI)", 3));
+        this.buttonList.add(this.buttonRemoveLayer = new GuiFancyButton(4, this.width / 2 - 80, this.height - 52, 150, 20, StatCollector.translateToLocal("createWorld.customize.flat.removeLayer"), 3));
+        this.buttonList.add(new GuiFancyButton(0, this.width / 2 - 80, this.height - 28, StatCollector.translateToLocal("gui.done"), 3));
+        this.buttonList.add(new GuiFancyButton(5, this.width / 2 + 80, this.height - 52, StatCollector.translateToLocal("createWorld.customize.presets"), 3));
+        this.buttonList.add(new GuiFancyButton(1, this.width / 2 + 80, this.height - 28, StatCollector.translateToLocal("gui.cancel"), 3));
         this.buttonAddLayer.drawButton = this.buttonEditLayer.drawButton = false;
         this.theFlatGeneratorInfo.func_82645_d();
         this.func_82270_g();

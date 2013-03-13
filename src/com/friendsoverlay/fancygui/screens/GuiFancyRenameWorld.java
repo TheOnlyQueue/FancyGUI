@@ -1,8 +1,9 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import net.minecraft.client.Minecraft;
 import com.friendsoverlay.fancygui.*;
 
+import net.minecraft.src.*;
 import org.lwjgl.input.Keyboard;
 
 public class GuiFancyRenameWorld extends GuiFancyScreen {
@@ -31,11 +32,11 @@ public class GuiFancyRenameWorld extends GuiFancyScreen {
 	public void initGui() {
 		StringTranslate var1 = StringTranslate.getInstance();
 		Keyboard.enableRepeatEvents(true);
-		this.controlList.clear();
-		this.controlList.add(new GuiFancyButton(0, this.width / 2,
+		this.buttonList.clear();
+		this.buttonList.add(new GuiFancyButton(0, this.width / 2,
 				this.height / 4 + 96 + 12, var1
 						.translateKey("selectWorld.renameButton"), 3));
-		this.controlList
+		this.buttonList
 				.add(new GuiFancyButton(1, this.width / 2,
 						this.height / 4 + 120 + 12, var1
 								.translateKey("gui.cancel"), 3));
@@ -80,11 +81,11 @@ public class GuiFancyRenameWorld extends GuiFancyScreen {
 	 */
 	protected void keyTyped(char par1, int par2) {
 		this.theGuiTextField.textboxKeyTyped(par1, par2);
-		((GuiButton) this.controlList.get(0)).enabled = this.theGuiTextField
+		((GuiButton) this.buttonList.get(0)).enabled = this.theGuiTextField
 				.getText().trim().length() > 0;
 
 		if (par1 == 13) {
-			this.actionPerformed((GuiButton) this.controlList.get(0));
+			this.actionPerformed((GuiButton) this.buttonList.get(0));
 		}
 	}
 

@@ -47,10 +47,8 @@ public class GuiFancyButton extends GuiButton {
 
             if (mode == 0) {
                 FontRenderer var4 = par1Minecraft.fontRenderer;
-                GL11.glBindTexture(GL11.GL_TEXTURE_2D,
-                        par1Minecraft.renderEngine
-                                .getTexture("/gui/gui.png"));
-                GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+                par1Minecraft.renderEngine.func_98187_b("/gui/gui.png");
+				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 this.field_82253_i = par2 >= this.xPosition
                         && par3 >= this.yPosition
                         && par2 < this.xPosition + this.width
@@ -75,9 +73,7 @@ public class GuiFancyButton extends GuiButton {
                         + (this.height - 8) / 2, var6);
             } else if (mode == 1) {
                 FontRenderer var4 = par1Minecraft.fontRenderer;
-                GL11.glBindTexture(GL11.GL_TEXTURE_2D,
-                        par1Minecraft.renderEngine
-                                .getTexture("%blur%/gui/fancygui.png"));
+                par1Minecraft.renderEngine.func_98187_b("%blur%/gui/fancygui.png");
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glEnable(GL11.GL_BLEND);
                 this.field_82253_i = par2 >= this.xPosition
@@ -97,9 +93,7 @@ public class GuiFancyButton extends GuiButton {
                 }
 
                 FontRenderer var4 = par1Minecraft.fontRenderer;
-                GL11.glBindTexture(GL11.GL_TEXTURE_2D,
-                        par1Minecraft.renderEngine
-                                .getTexture("%blur%/gui/fancygui.png"));
+                par1Minecraft.renderEngine.func_98187_b("%blur%/gui/fancygui.png");
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glEnable(GL11.GL_BLEND);
                 this.field_82253_i = par2 >= this.xPosition
@@ -119,9 +113,7 @@ public class GuiFancyButton extends GuiButton {
                 }
 
                 FontRenderer var4 = par1Minecraft.fontRenderer;
-                GL11.glBindTexture(GL11.GL_TEXTURE_2D,
-                        par1Minecraft.renderEngine
-                                .getTexture("%blur%/gui/fancygui.png"));
+                par1Minecraft.renderEngine.func_98187_b("%blur%/gui/fancygui.png");
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glEnable(GL11.GL_BLEND);
                 this.field_82253_i = par2 >= this.xPosition

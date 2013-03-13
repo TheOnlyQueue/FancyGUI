@@ -1,4 +1,4 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -8,6 +8,7 @@ import java.util.List;
 
 import net.minecraft.client.Minecraft;
 import com.friendsoverlay.fancygui.*;
+import net.minecraft.src.*;
 
 public class GuiFancySelectWorld extends GuiFancyScreen {
 
@@ -67,28 +68,36 @@ public class GuiFancySelectWorld extends GuiFancyScreen {
 	 * Adds the buttons (and other controls) to the screen in question.
 	 */
 	public void initGui() {
-		bg = new GuiFancyRotatingBackground(mc, width, height, zLevel);
 		StringTranslate var1 = StringTranslate.getInstance();
 		this.screenTitle = var1.translateKey("selectWorld.title");
+
+		try
+		{
+			this.loadSaves();
+		}
+		catch (AnvilConverterException var3)
+		{
+			var3.printStackTrace();
+			this.mc.displayGuiScreen(new GuiErrorScreen("Unable to load words", var3.getMessage()));
+			return;
+		}
+
 		this.localizedWorldText = var1.translateKey("selectWorld.world");
-		this.localizedMustConvertText = var1
-				.translateKey("selectWorld.conversion");
-		this.localizedGameModeText[EnumGameType.SURVIVAL.getID()] = var1
-				.translateKey("gameMode.survival");
-		this.localizedGameModeText[EnumGameType.CREATIVE.getID()] = var1
-				.translateKey("gameMode.creative");
-		this.localizedGameModeText[EnumGameType.ADVENTURE.getID()] = var1
-				.translateKey("gameMode.adventure");
-		this.loadSaves();
+		this.localizedMustConvertText = var1.translateKey("selectWorld.conversion");
+		this.localizedGameModeText[EnumGameType.SURVIVAL.getID()] = var1.translateKey("gameMode.survival");
+		this.localizedGameModeText[EnumGameType.CREATIVE.getID()] = var1.translateKey("gameMode.creative");
+		this.localizedGameModeText[EnumGameType.ADVENTURE.getID()] = var1.translateKey("gameMode.adventure");
 		this.worldSlotContainer = new GuiWorldSlot(this);
-		this.worldSlotContainer.registerScrollButtons(this.controlList, 4, 5);
+		this.worldSlotContainer.registerScrollButtons(this.buttonList, 4, 5);
 		this.initButtons();
+		bg = new GuiFancyRotatingBackground(mc, width, height, zLevel);
 	}
 
 	/**
 	 * loads the saves
 	 */
-	private void loadSaves() {
+	private void loadSaves() throws AnvilConverterException
+	{
 		ISaveFormat var1 = this.mc.getSaveLoader();
 		this.saveList = var1.getSaveList();
 		Collections.sort(this.saveList);
@@ -122,19 +131,19 @@ public class GuiFancySelectWorld extends GuiFancyScreen {
 	 */
 	public void initButtons() {
 		StringTranslate var1 = StringTranslate.getInstance();
-		this.controlList.add(buttonSelect = new GuiFancyButton(1,
+		this.buttonList.add(buttonSelect = new GuiFancyButton(1,
 				this.width / 2, this.height - 52, var1
-						.translateKey("selectWorld.select"), 3));
-		this.controlList.add(new GuiFancyButton(3, this.width,
+				.translateKey("selectWorld.select"), 3));
+		this.buttonList.add(new GuiFancyButton(3, this.width,
 				this.height - 52, var1.translateKey("selectWorld.create"), 2));
-		this.controlList.add(buttonDelete = new GuiFancyButton(6, 0,
+		this.buttonList.add(buttonDelete = new GuiFancyButton(6, 0,
 				this.height - 52, var1.translateKey("selectWorld.rename"), 1));
-		this.controlList.add(buttonRename = new GuiFancyButton(2, 0,
+		this.buttonList.add(buttonRename = new GuiFancyButton(2, 0,
 				this.height - 28, var1.translateKey("selectWorld.delete"), 1));
-		this.controlList.add(field_82316_w = new GuiFancyButton(7,
+		this.buttonList.add(field_82316_w = new GuiFancyButton(7,
 				this.width / 2, this.height - 28, var1
 						.translateKey("selectWorld.recreate"), 3));
-		this.controlList.add(new GuiFancyButton(0, this.width,
+		this.buttonList.add(new GuiFancyButton(0, this.width,
 				this.height - 28, var1.translateKey("gui.cancel"), 2));
 		this.buttonSelect.enabled = false;
 		this.buttonRename.enabled = false;
@@ -206,15 +215,26 @@ public class GuiFancySelectWorld extends GuiFancyScreen {
 		}
 	}
 
-	public void confirmClicked(boolean par1, int par2) {
-		if (this.deleting) {
+	public void confirmClicked(boolean par1, int par2)
+	{
+		if (this.deleting)
+		{
 			this.deleting = false;
 
-			if (par1) {
+			if (par1)
+			{
 				ISaveFormat var3 = this.mc.getSaveLoader();
 				var3.flushCache();
 				var3.deleteWorldDirectory(this.getSaveFileName(par2));
-				this.loadSaves();
+
+				try
+				{
+					this.loadSaves();
+				}
+				catch (AnvilConverterException var5)
+				{
+					var5.printStackTrace();
+				}
 			}
 
 			this.mc.displayGuiScreen(this);

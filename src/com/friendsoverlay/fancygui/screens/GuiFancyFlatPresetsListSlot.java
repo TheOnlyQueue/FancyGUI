@@ -1,5 +1,7 @@
-package net.minecraft.src;
+package com.friendsoverlay.fancygui.screens;
 
+import net.minecraft.client.*;
+import net.minecraft.src.*;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
@@ -22,7 +24,7 @@ public class GuiFancyFlatPresetsListSlot extends GuiFancySlot {
         this.func_82456_d(par1 + 1, par2 + 1);
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         RenderHelper.enableGUIStandardItemLighting();
-        GuiFlatPresets.getPresetIconRenderer().renderItemIntoGUI(this.flatPresetsGui.fontRenderer, this.flatPresetsGui.mc.renderEngine, new ItemStack(par3, 1, 0), par1 + 2, par2 + 2);
+        GuiFancyFlatPresets.getPresetIconRenderer().renderItemIntoGUI(Minecraft.getMinecraft().fontRenderer, this.flatPresetsGui.mc.renderEngine, new ItemStack(par3, 1, 0), par1 + 2, par2 + 2);
         RenderHelper.disableStandardItemLighting();
         GL11.glDisable(GL12.GL_RESCALE_NORMAL);
     }
@@ -34,10 +36,9 @@ public class GuiFancyFlatPresetsListSlot extends GuiFancySlot {
 
     private void func_82455_b(int par1, int par2, int par3, int par4)
     {
-        int var5 = this.flatPresetsGui.mc.renderEngine.getTexture("/gui/slot.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.flatPresetsGui.mc.renderEngine.bindTexture(var5);
-        Tessellator var10 = Tessellator.instance;
+		this.flatPresetsGui.mc.renderEngine.func_98187_b("/gui/slot.png");
+		Tessellator var10 = Tessellator.instance;
         var10.startDrawingQuads();
         var10.addVertexWithUV((double)(par1 + 0), (double)(par2 + 18), (double)this.flatPresetsGui.zLevel, (double)((float)(par3 + 0) * 0.0078125F), (double)((float)(par4 + 18) * 0.0078125F));
         var10.addVertexWithUV((double)(par1 + 18), (double)(par2 + 18), (double)this.flatPresetsGui.zLevel, (double)((float)(par3 + 18) * 0.0078125F), (double)((float)(par4 + 18) * 0.0078125F));
@@ -51,7 +52,7 @@ public class GuiFancyFlatPresetsListSlot extends GuiFancySlot {
      */
     protected int getSize()
     {
-        return GuiFlatPresets.getPresets().size();
+        return GuiFancyFlatPresets.getPresets().size();
     }
 
     /**
@@ -61,7 +62,7 @@ public class GuiFancyFlatPresetsListSlot extends GuiFancySlot {
     {
         this.field_82459_a = par1;
         this.flatPresetsGui.func_82296_g();
-        GuiFancyFlatPresets.func_82298_b(this.flatPresetsGui).setText(((GuiFlatPresetsItem)GuiFlatPresets.getPresets().get(GuiFancyFlatPresets.func_82292_a(this.flatPresetsGui).field_82459_a)).presetData);
+        GuiFancyFlatPresets.func_82298_b(this.flatPresetsGui).setText(((GuiFancyFlatPresetsItem)GuiFancyFlatPresets.getPresets().get(GuiFancyFlatPresets.func_82292_a(this.flatPresetsGui).field_82459_a)).presetData);
     }
 
     /**
@@ -76,8 +77,8 @@ public class GuiFancyFlatPresetsListSlot extends GuiFancySlot {
 
     protected void drawSlot(int par1, int par2, int par3, int par4, Tessellator par5Tessellator)
     {
-        GuiFlatPresetsItem var6 = (GuiFlatPresetsItem)GuiFlatPresets.getPresets().get(par1);
+        GuiFancyFlatPresetsItem var6 = (GuiFancyFlatPresetsItem)GuiFancyFlatPresets.getPresets().get(par1);
         this.func_82457_a(par2, par3, var6.iconId);
-        this.flatPresetsGui.fontRenderer.drawString(var6.presetName, par2 + 18 + 5, par3 + 6, 16777215);
+        Minecraft.getMinecraft().fontRenderer.drawString(var6.presetName, par2 + 18 + 5, par3 + 6, 16777215);
     }
 }
