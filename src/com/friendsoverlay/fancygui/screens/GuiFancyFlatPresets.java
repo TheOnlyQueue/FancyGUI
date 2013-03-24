@@ -34,7 +34,6 @@ public class GuiFancyFlatPresets extends GuiFancyScreen {
 		super(mc, oldScreen);
 		createFlatWorldGui = null;
         this.mc = mc;
-		this.fontRenderer = super.fontRenderer;
 		this.zLevel = super.zLevel;
 	}
 	

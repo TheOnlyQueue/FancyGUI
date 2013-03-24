@@ -35,7 +35,7 @@ public class GuiScreen extends Gui
 
     /** The button that was just pressed. */
     private GuiButton selectedButton = null;
-    private int field_85042_b = 0;
+    private int eventButton = 0;
     private long field_85043_c = 0L;
     private int field_92018_d = 0;
 
@@ -194,9 +194,9 @@ public class GuiScreen extends Gui
                 return;
             }
 
-            this.field_85042_b = Mouse.getEventButton();
+            this.eventButton = Mouse.getEventButton();
             this.field_85043_c = Minecraft.getSystemTime();
-            this.mouseClicked(var1, var2, this.field_85042_b);
+            this.mouseClicked(var1, var2, this.eventButton);
         }
         else if (Mouse.getEventButton() != -1)
         {
@@ -205,13 +205,13 @@ public class GuiScreen extends Gui
                 return;
             }
 
-            this.field_85042_b = -1;
+            this.eventButton = -1;
             this.mouseMovedOrUp(var1, var2, Mouse.getEventButton());
         }
-        else if (this.field_85042_b != -1 && this.field_85043_c > 0L)
+        else if (this.eventButton != -1 && this.field_85043_c > 0L)
         {
             long var3 = Minecraft.getSystemTime() - this.field_85043_c;
-            this.func_85041_a(var1, var2, this.field_85042_b, var3);
+            this.func_85041_a(var1, var2, this.eventButton, var3);
         }
     }
 
@@ -278,7 +278,7 @@ public class GuiScreen extends Gui
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glDisable(GL11.GL_FOG);
         Tessellator var2 = Tessellator.instance;
-        this.mc.renderEngine.func_98187_b("/gui/background.png");
+        this.mc.renderEngine.bindTexture("/gui/background.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         float var3 = 32.0F;
         var2.startDrawingQuads();

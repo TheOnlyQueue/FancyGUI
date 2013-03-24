@@ -496,7 +496,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 					GL11.glRotatef(-90.0F, 1.0F, 0.0F, 0.0F);
 				}
 
-				this.mc.renderEngine.func_98187_b(titlePanoramaPaths[var10]);
+				this.mc.renderEngine.bindTexture(titlePanoramaPaths[var10]);
 				var4.startDrawingQuads();
 				var4.setColorRGBA_I(16777215, 255 / (var6 + 1));
 				float var11 = 0.0F;
@@ -530,7 +530,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 	private void rotateAndBlurSkybox(float par1)
 	{
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.viewportTexture);
-		this.mc.renderEngine.func_98185_a();
+		this.mc.renderEngine.resetBoundTexture();
 		GL11.glCopyTexSubImage2D(GL11.GL_TEXTURE_2D, 0, 0, 0, 0, 0, 256, 256);
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
@@ -553,7 +553,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 
 		var2.draw();
 		GL11.glColorMask(true, true, true, true);
-		this.mc.renderEngine.func_98185_a();
+		this.mc.renderEngine.resetBoundTexture();
 	}
 
 	/**
@@ -606,7 +606,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 		// 16777215);
 		// this.drawGradientRect(0, 0, this.width, this.height, 0,
 		// Integer.MIN_VALUE);
-		this.mc.renderEngine.func_98187_b("/title/mclogo.png");
+		this.mc.renderEngine.bindTexture("/title/mclogo.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 
 		this.drawTexturedModalRect(var6 + 0, var7 + 0, 0, 0, 155, 44);
@@ -661,7 +661,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 
 		drawString(fontRenderer, var9, 2, 2, 0x64ffffff);
 
-				mc.renderEngine.func_98187_b("/title/mojangt.png");
+				mc.renderEngine.bindTexture("/title/mojangt.png");
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.3F);
 		drawTexturedModalRect(2, height - 19 - 2, 0, 0, 128, 19);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

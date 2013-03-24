@@ -307,7 +307,7 @@ public abstract class GuiFancySlot {
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glDisable(GL11.GL_FOG);
         Tessellator var18 = Tessellator.instance;
-        this.mc.renderEngine.func_98187_b("/gui/background.png");
+        this.mc.renderEngine.bindTexture("/gui/background.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         float var17 = 32.0F;
 
@@ -462,7 +462,7 @@ public abstract class GuiFancySlot {
      */
     private void overlayBackground(int par1, int par2, int par3, int par4) {
         Tessellator var5 = Tessellator.instance;
-        this.mc.renderEngine.func_98187_b("/gui/background.png");
+        this.mc.renderEngine.bindTexture("/gui/background.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         float var6 = 32.0F;
         var5.startDrawingQuads();
