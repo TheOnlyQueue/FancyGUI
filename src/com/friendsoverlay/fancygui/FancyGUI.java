@@ -67,8 +67,7 @@ public class FancyGUI {
 
 		try {
 			Class c = fancyScreensMap.get(className);
-			Object o = c.getConstructor(Minecraft.class, GuiScreen.class)
-					.newInstance(mc, oldScreen);
+			Object o = c.getConstructor(Minecraft.class, GuiScreen.class).newInstance(mc, oldScreen);
 			if (!(o instanceof GuiFancyScreen)) {
 				return false;
 			}
