@@ -389,16 +389,17 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
             try {
                 Class.forName("com.friendsoverlay.FriendsOverlay");
                 FriendsOverlayInstalled = true;
-            } catch (ClassNotFoundException e) {
+            } catch (Throwable e) {
                 FriendsOverlayInstalled = false;
             }
 
             if (FriendsOverlayInstalled) {
                 try {
                     Class c = Class.forName("com.friendsoverlay.FriendsOverlay");
-                    Method m = c.getMethod("openMenu");
-                    m.invoke(null);
-                } catch (Exception e) {
+                    Method m = c.getMethod("getInstance");
+                    Object o = m.invoke(null);
+					o.getClass().getDeclaredMethod("openMenu").invoke(o);
+                } catch (Throwable e) {
                 }
             } else {
                 mc.displayGuiScreen(new GuiFancyNoFriendsOverlay(this));

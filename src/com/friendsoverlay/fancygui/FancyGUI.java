@@ -47,12 +47,12 @@ public class FancyGUI {
 			try {
 				Class.forName("net.minecraft.src.GuiPerformanceSettingsOF");
 				optifineInstalled = true;
-			} catch (Exception e) {
+			} catch (Throwable e) {
 				optifineInstalled = false;
 				try {
 					Class.forName("GuiPerformanceSettingsOF");
 					optifineInstalled = true;
-				} catch (Exception e2) {
+				} catch (Throwable e2) {
 					optifineInstalled = false;
 				}
 			}
@@ -240,10 +240,10 @@ public class FancyGUI {
 		}
 
 		try {
-			c = FancyGUI.class.forName(className);
-		} catch (Exception e) {
+			c = Class.forName(className);
+		} catch (Throwable e) {
 			try {
-				c = FancyGUI.class.forName("net.minecraft.src." + className);
+				c = Class.forName("net.minecraft.src." + className);
 			} catch (Exception e2) {
 			}
 		}
