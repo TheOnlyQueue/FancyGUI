@@ -14,6 +14,16 @@ public abstract class GuiFancyScreen extends GuiScreen {
         this.oldScreen = oldScreen;
     }
 
+	protected Object getOldValue(Integer i) {
+		try {
+			Field f = oldScreen.getClass().getDeclaredFields()[i];
+			f.setAccessible(true);
+			return f.get(oldScreen);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
     protected Object getOldValue(String name) {
         try {
             Field f = oldScreen.getClass().getDeclaredField(name);

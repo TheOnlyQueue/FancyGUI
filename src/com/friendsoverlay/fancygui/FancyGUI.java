@@ -35,14 +35,31 @@ public class FancyGUI {
 		}
 	}
 
-	public synchronized static Boolean replaceScreen(Minecraft mc,
-			GuiScreen oldScreen) {
+	public synchronized static Boolean replaceScreen(Minecraft mc, GuiScreen oldScreen) {
 		load();
 		GuiFancyScreen newScreen = null;
 		if (oldScreen == null) {
 			return false;
 		}
 		String className = getClassName(oldScreen.getClass());
+		if (className.equalsIgnoreCase("GuiVideoSettings")) {
+			Boolean optifineInstalled = false;
+			try {
+				Class.forName("net.minecraft.src.GuiPerformanceSettingsOF");
+				optifineInstalled = true;
+			} catch (Exception e) {
+				optifineInstalled = false;
+				try {
+					Class.forName("GuiPerformanceSettingsOF");
+					optifineInstalled = true;
+				} catch (Exception e2) {
+					optifineInstalled = false;
+				}
+			}
+			if (optifineInstalled) {
+				className = "GuiVideoSettingsOF";
+			}
+		}
 
 		if (!fancyScreensMap.containsKey(className)) {
 			return false;

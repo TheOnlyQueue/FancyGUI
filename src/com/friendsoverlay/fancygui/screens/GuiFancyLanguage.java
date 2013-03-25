@@ -22,15 +22,15 @@ public class GuiFancyLanguage extends GuiFancyScreen {
 	private final GameSettings theGameSettings;
 
 	/** This GUI's 'Done' button. */
-	private GuiSmallButton doneButton;
+	private GuiFancyButton doneButton;
 	public Minecraft mc;
 	public FontRenderer fontRenderer;
 	private GuiFancyRotatingBackground bg;
 
 	public GuiFancyLanguage(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
-		this.parentGui = (GuiScreen) getOldValue("parentGui");
-		this.theGameSettings = (GameSettings) getOldValue("theGameSettings");
+		this.parentGui = (GuiScreen) getOldValue(0);
+		this.theGameSettings = (GameSettings) getOldValue(3);
 		this.mc = Minecraft.getMinecraft();
 		this.fontRenderer = Minecraft.getMinecraft().fontRenderer;
 	}
@@ -41,7 +41,7 @@ public class GuiFancyLanguage extends GuiFancyScreen {
 	public void initGui()
 	{
 		StringTranslate var1 = StringTranslate.getInstance();
-		this.buttonList.add(this.doneButton = new GuiSmallButton(6, this.width / 2 - 75, this.height - 38, var1.translateKey("gui.done")));
+		this.buttonList.add(this.doneButton = new GuiFancyButton(6, this.width / 2, this.height - 38, var1.translateKey("gui.done"), 3));
 		this.languageList = new GuiFancySlotLanguage(this);
 		this.languageList.registerScrollButtons(this.buttonList, 7, 8);
 		this.bg = new GuiFancyRotatingBackground(mc, width, height, zLevel);
@@ -110,7 +110,7 @@ public class GuiFancyLanguage extends GuiFancyScreen {
 	/**
 	 * Returns the private doneButton field.
 	 */
-	static GuiSmallButton getDoneButton(GuiFancyLanguage par0GuiLanguage)
+	static GuiFancyButton getDoneButton(GuiFancyLanguage par0GuiLanguage)
 	{
 		return par0GuiLanguage.doneButton;
 	}

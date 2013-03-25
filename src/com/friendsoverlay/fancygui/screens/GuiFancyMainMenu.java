@@ -653,7 +653,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 		}
 
 		GL11.glPopMatrix();
-		String var9 = "v1.5";
+		String var9 = "v1.5.1";
 
 		if (this.mc.isDemo()) {
 			var9 = var9 + " Demo";

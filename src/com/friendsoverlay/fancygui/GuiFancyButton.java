@@ -12,6 +12,8 @@ public class GuiFancyButton extends GuiButton {
     public int xPositionOrig = 0;
     private boolean first = false;
     private EnumOptions enumOptions;
+	public Integer width;
+	public Integer height;
 
     public GuiFancyButton(int par1, int par2, int par3, String par4Str) {
         this(par1, par2, par3, 200, 20, par4Str);
@@ -43,6 +45,8 @@ public class GuiFancyButton extends GuiButton {
 
     @Override
     public void drawButton(Minecraft par1Minecraft, int par2, int par3) {
+		this.width = super.width;
+		this.height = super.height;
         if (this.drawButton) {
 
             if (mode == 0) {

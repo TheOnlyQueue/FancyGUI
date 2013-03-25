@@ -14,8 +14,8 @@ public class GuiFancyRenameWorld extends GuiFancyScreen {
 
 	public GuiFancyRenameWorld(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
-		worldName = (String) getOldValue("worldName");
-		parentGuiScreen = (GuiScreen) getOldValue("parentGuiScreen");
+		worldName = (String) getOldValue(2);
+		parentGuiScreen = (GuiScreen) getOldValue(0);
 	}
 
 	/**

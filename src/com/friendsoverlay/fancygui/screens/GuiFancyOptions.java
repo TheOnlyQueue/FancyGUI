@@ -24,8 +24,8 @@ public class GuiFancyOptions extends GuiFancyScreen {
 
 	public GuiFancyOptions(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
-		this.parentScreen = (GuiScreen) getOldValue("parentScreen");
-		this.options = (GameSettings) getOldValue("options");
+		this.parentScreen = (GuiScreen) getOldValue(1);
+		this.options = (GameSettings) getOldValue(2);
 	}
 
 	/**

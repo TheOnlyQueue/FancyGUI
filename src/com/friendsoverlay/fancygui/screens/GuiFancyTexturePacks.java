@@ -25,8 +25,8 @@ public class GuiFancyTexturePacks extends GuiFancyScreen {
 
 	public GuiFancyTexturePacks(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
-		this.guiScreen = (GuiScreen) getOldValue("guiScreen");
-		this.field_96146_n = (GameSettings) getOldValue("field_96146_n");
+		this.guiScreen = (GuiScreen) getOldValue(0);
+		this.field_96146_n = (GameSettings) getOldValue(4);
 	}
 
 	/**
@@ -35,8 +35,8 @@ public class GuiFancyTexturePacks extends GuiFancyScreen {
 	public void initGui()
 	{
 		StringTranslate var1 = StringTranslate.getInstance();
-		this.buttonList.add(new GuiSmallButton(5, this.width / 2 - 154, this.height - 48, var1.translateKey("texturePack.openFolder")));
-		this.buttonList.add(new GuiSmallButton(6, this.width / 2 + 4, this.height - 48, var1.translateKey("gui.done")));
+		this.buttonList.add(new GuiFancyButton(5, this.width / 2 - 74, this.height - 48, var1.translateKey("texturePack.openFolder"), 3));
+		this.buttonList.add(new GuiFancyButton(6, this.width / 2 + 74, this.height - 48, var1.translateKey("gui.done"), 3));
 		this.mc.texturePackList.updateAvaliableTexturePacks();
 		this.fileLocation = (new File(Minecraft.getMinecraftDir(), "texturepacks")).getAbsolutePath();
 		this.guiTexturePackSlot = new GuiFancyTexturePackSlot(this);

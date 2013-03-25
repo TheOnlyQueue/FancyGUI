@@ -68,7 +68,7 @@ public class GuiFancyMultiplayer extends GuiFancyScreen {
 		super(mc, oldScreen);
 		this.mc = super.mc;
 		this.fontRenderer = mc.fontRenderer;
-		this.parentScreen = (GuiScreen) getOldValue("parentScreen");
+		this.parentScreen = (GuiScreen) getOldValue(2);
 	}
 
 	/**

@@ -29,12 +29,12 @@ public class GuiFancyYesNo extends GuiFancyScreen {
 	
 	public GuiFancyYesNo(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
-		parentScreen = (GuiScreen) getOldValue("parentScreen");
-		message1 = (String) getOldValue("message1");
-		message2 = (String) getOldValue("message2");
-		buttonText1 = (String) getOldValue("buttonText1");
-		buttonText2 = (String) getOldValue("buttonText2");
-		worldNumber = (Integer) getOldValue("worldNumber");
+		parentScreen = (GuiScreen) getOldValue(0);
+		message1 = (String) getOldValue(1);
+		message2 = (String) getOldValue(2);
+		buttonText1 = (String) getOldValue(3);
+		buttonText2 = (String) getOldValue(4);
+		worldNumber = (Integer) getOldValue(5);
 	}
 
 	/**

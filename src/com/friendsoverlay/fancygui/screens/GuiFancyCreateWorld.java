@@ -76,7 +76,7 @@ public class GuiFancyCreateWorld extends GuiFancyScreen {
     
 	public GuiFancyCreateWorld(Minecraft mc, GuiScreen oldScreen) {
 		super(mc, oldScreen);
-		this.parentGuiScreen = (GuiScreen) getOldValue("parentGuiScreen");
+		this.parentGuiScreen = (GuiScreen) getOldValue(0);
 		this.seed = "";
         this.localizedNewWorldText = StatCollector.translateToLocal("selectWorld.newWorld");
 	}
