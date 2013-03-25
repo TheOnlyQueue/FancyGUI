@@ -120,6 +120,111 @@ public class FancyGUI {
 			}
 		} catch (Exception e) {
 		}
+
+		obfuscatedClassNames.put("avm", "CallableUpdatingScreenName");
+		obfuscatedClassNames.put("avn", "CallableParticleScreenName");
+		obfuscatedClassNames.put("avo", "CallableTickingScreenName");
+		obfuscatedClassNames.put("awb", "LoadingScreenRenderer");
+		obfuscatedClassNames.put("awc", "ScreenShotHelper");
+		obfuscatedClassNames.put("awg", "GuiButton");
+		obfuscatedClassNames.put("awh", "GuiNewChat");
+		obfuscatedClassNames.put("awi", "ScreenChatOptions");
+		obfuscatedClassNames.put("awj", "GuiChat");
+		obfuscatedClassNames.put("awk", "GuiYesNo");
+		obfuscatedClassNames.put("awl", "GuiControls");
+		obfuscatedClassNames.put("awm", "GuiCreateFlatWorld");
+		obfuscatedClassNames.put("awn", "GuiCreateFlatWorldListSlot");
+		obfuscatedClassNames.put("awo", "GuiCreateWorld");
+		obfuscatedClassNames.put("awp", "GuiGameOver");
+		obfuscatedClassNames.put("awq", "GuiScreenDemo");
+		obfuscatedClassNames.put("awr", "GuiScreenServerList");
+		obfuscatedClassNames.put("aws", "GuiTextField");
+		obfuscatedClassNames.put("awt", "GuiScreenAddServer");
+		obfuscatedClassNames.put("awu", "GuiErrorScreen");
+		obfuscatedClassNames.put("aww", "GuiIngame");
+		obfuscatedClassNames.put("awx", "Gui");
+		obfuscatedClassNames.put("awz", "GuiSleepMP");
+		obfuscatedClassNames.put("axa", "GuiMultiplayer");
+		obfuscatedClassNames.put("axb", "GuiSlotServer");
+		obfuscatedClassNames.put("axd", "GuiButtonLanguage");
+		obfuscatedClassNames.put("axe", "GuiLanguage");
+		obfuscatedClassNames.put("axf", "GuiSlotLanguage");
+		obfuscatedClassNames.put("axh", "GuiButtonLink");
+		obfuscatedClassNames.put("axj", "GuiOptions");
+		obfuscatedClassNames.put("axk", "GuiMemoryErrorScreen");
+		obfuscatedClassNames.put("axl", "GuiIngameMenu");
+		obfuscatedClassNames.put("axm", "GuiFlatPresets");
+		obfuscatedClassNames.put("axn", "GuiFlatPresetsItem");
+		obfuscatedClassNames.put("axo", "GuiFlatPresetsListSlot");
+		obfuscatedClassNames.put("axp", "GuiProgress");
+		obfuscatedClassNames.put("axq", "GuiRenameWorld");
+		obfuscatedClassNames.put("axr", "GuiScreen");
+		obfuscatedClassNames.put("axt", "GuiSlot");
+		obfuscatedClassNames.put("axu", "GuiSelectWorld");
+		obfuscatedClassNames.put("axv", "GuiWorldSlot");
+		obfuscatedClassNames.put("axw", "GuiShareToLan");
+		obfuscatedClassNames.put("axx", "GuiSlider");
+		obfuscatedClassNames.put("axy", "GuiSmallButton");
+		obfuscatedClassNames.put("axz", "GuiSnooper");
+		obfuscatedClassNames.put("aya", "GuiSnooperList");
+		obfuscatedClassNames.put("ayb", "GuiVideoSettings");
+		obfuscatedClassNames.put("ayc", "GuiAchievement");
+		obfuscatedClassNames.put("ayd", "GuiAchievements");
+		obfuscatedClassNames.put("aye", "GuiStats");
+		obfuscatedClassNames.put("ayf", "GuiSlotStatsBlock");
+		obfuscatedClassNames.put("ayh", "GuiSlotStatsGeneral");
+		obfuscatedClassNames.put("ayi", "GuiSlotStatsItem");
+		obfuscatedClassNames.put("ayk", "GuiSlotStats");
+		obfuscatedClassNames.put("ayl", "GuiContainer");
+		obfuscatedClassNames.put("aym", "GuiBeacon");
+		obfuscatedClassNames.put("ayn", "GuiBeaconButtonCancel");
+		obfuscatedClassNames.put("ayo", "GuiBeaconButtonConfirm");
+		obfuscatedClassNames.put("ayp", "GuiBeaconButtonPower");
+		obfuscatedClassNames.put("ayq", "GuiBeaconButton");
+		obfuscatedClassNames.put("ayr", "GuiScreenBook");
+		obfuscatedClassNames.put("ays", "GuiButtonNextPage");
+		obfuscatedClassNames.put("ayt", "GuiBrewingStand");
+		obfuscatedClassNames.put("ayu", "GuiCommandBlock");
+		obfuscatedClassNames.put("ayv", "GuiChest");
+		obfuscatedClassNames.put("ayw", "GuiCrafting");
+		obfuscatedClassNames.put("ayy", "GuiContainerCreative");
+		obfuscatedClassNames.put("azd", "GuiEnchantment");
+		obfuscatedClassNames.put("aze", "GuiFurnace");
+		obfuscatedClassNames.put("azf", "GuiHopper");
+		obfuscatedClassNames.put("azg", "GuiInventory");
+		obfuscatedClassNames.put("azh", "GuiMerchant");
+		obfuscatedClassNames.put("azi", "GuiButtonMerchant");
+		obfuscatedClassNames.put("azj", "GuiRepair");
+		obfuscatedClassNames.put("azk", "GuiEditSign");
+		obfuscatedClassNames.put("azl", "GuiDispenser");
+		obfuscatedClassNames.put("azm", "GuiScreenConfigureWorld");
+		obfuscatedClassNames.put("azo", "GuiScreenCreateOnlineWorld");
+		obfuscatedClassNames.put("azp", "ThreadCreateOnlineWorldScreen");
+		obfuscatedClassNames.put("azr", "GuiScreenDisconnectedOnline");
+		obfuscatedClassNames.put("azs", "GuiScreenEditOnlineWorld");
+		obfuscatedClassNames.put("azv", "GuiScreenInvite");
+		obfuscatedClassNames.put("azw", "GuiScreenSelectLocation");
+		obfuscatedClassNames.put("azy", "GuiScreenConfirmation");
+		obfuscatedClassNames.put("azz", "GuiScreenLongRunningTask");
+		obfuscatedClassNames.put("bai", "GuiScreenOnlineServers");
+		obfuscatedClassNames.put("baj", "ThreadOnlineScreen");
+		obfuscatedClassNames.put("bak", "GuiSlotOnlineServerList");
+		obfuscatedClassNames.put("bam", "GuiScreenResetWorld");
+		obfuscatedClassNames.put("bao", "GuiScreenSubscription");
+		obfuscatedClassNames.put("baq", "GuiParticle");
+		obfuscatedClassNames.put("bar", "GuiWinGame");
+		obfuscatedClassNames.put("bdn", "GuiConfirmOpenLink");
+		obfuscatedClassNames.put("bdo", "GuiConnecting");
+		obfuscatedClassNames.put("bdq", "GuiDisconnected");
+		obfuscatedClassNames.put("bdx", "GuiPlayerInfo");
+		obfuscatedClassNames.put("bdy", "GuiDownloadTerrain");
+		obfuscatedClassNames.put("bfs", "CallableScreenName");
+		obfuscatedClassNames.put("bfu", "CallableScreenSize");
+		obfuscatedClassNames.put("bjx", "GuiTexturePacks");
+		obfuscatedClassNames.put("bjy", "GuiTexturePackSlot");
+		obfuscatedClassNames.put("bkg", "GuiMainMenu");
+		obfuscatedClassNames.put("bkh", "ThreadTitleScreen");
+
 		loaded = true;
 		loading = false;
 	}
@@ -128,8 +233,7 @@ public class FancyGUI {
 		load();
 		Class c = null;
 		if (obfuscatedClassNames.containsValue(className)) {
-			for (Map.Entry<String, String> entry : obfuscatedClassNames
-					.entrySet()) {
+			for (Map.Entry<String, String> entry : obfuscatedClassNames.entrySet()) {
 				if (entry.getValue().equalsIgnoreCase(className)) {
 					className = entry.getKey();
 				}
