@@ -96,7 +96,7 @@ public class GuiFancyRotatingBackground extends GuiScreen {
                 }
 
                 mc.renderEngine.bindTexture((new StringBuilder()).append("/title/bg/panorama").append(var10).append(".png").toString());
-				var4.startDrawingQuads();
+                var4.startDrawingQuads();
                 var4.setColorRGBA_I(16777215, 255 / (var6 + 1));
                 float var11 = 0.0F;
                 var4.addVertexWithUV(-1.0D, -1.0D, 1.0D,
@@ -163,10 +163,8 @@ public class GuiFancyRotatingBackground extends GuiScreen {
         }
         GL11.glViewport(0, 0, 256, 256);
         this.drawPanorama(par1, par2, par3);
-        this.drawGradientRect(0, 0, this.width, this.height, -2130706433,
-                16777215);
-        this.drawGradientRect(0, 0, this.width, this.height, 0,
-                Integer.MIN_VALUE);
+        //this.drawGradientRect(0, 0, this.width, this.height, -2130706433, 0xFFFFFF);
+        //this.drawGradientRect(0, 0, this.width, this.height, 0, Integer.MIN_VALUE);
         GL11.glDisable(GL11.GL_TEXTURE_2D);
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         this.rotateAndBlurSkybox(par3);
