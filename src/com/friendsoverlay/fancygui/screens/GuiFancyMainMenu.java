@@ -654,7 +654,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 		}
 
 		GL11.glPopMatrix();
-		String var9 = "v1.5.1";
+		String var9 = "v1.5.2";
 
 		if (this.mc.isDemo()) {
 			var9 = var9 + " Demo";
@@ -688,7 +688,7 @@ public class GuiFancyMainMenu extends GuiFancyScreen {
 
 		if (this.field_92025_p.length() > 0 && par1 >= this.field_92022_t && par1 <= this.field_92020_v && par2 >= this.field_92021_u && par2 <= this.field_92019_w)
 		{
-			GuiConfirmOpenLink var4 = new GuiConfirmOpenLink(this, "http://tinyurl.com/javappc", 13);
+			GuiConfirmOpenLink var4 = new GuiConfirmOpenLink(this, "http://tinyurl.com/javappc", 13, true);
 			var4.func_92026_h();
 			this.mc.displayGuiScreen(var4);
 		}

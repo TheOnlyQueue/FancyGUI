@@ -146,8 +146,8 @@ public class GuiFancySlotServer extends GuiFancySlot {
 			}
 		}
 
-		boolean var7 = var6.field_82821_f > 60;
-		boolean var8 = var6.field_82821_f < 60;
+		boolean var7 = var6.field_82821_f > 61;
+		boolean var8 = var6.field_82821_f < 61;
 		boolean var9 = var7 || var8;
 		this.parentGui.drawString(this.parentGui.fontRenderer, var6.serverName, par2 + 2, par3 + 1, 16777215);
 		this.parentGui.drawString(this.parentGui.fontRenderer, var6.serverMOTD, par2 + 2, par3 + 12, 8421504);
