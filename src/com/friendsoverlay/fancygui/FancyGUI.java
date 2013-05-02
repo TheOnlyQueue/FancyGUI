@@ -42,6 +42,7 @@ public class FancyGUI {
 			return false;
 		}
 		String className = getClassName(oldScreen.getClass());
+
 		if (className.equalsIgnoreCase("GuiVideoSettings")) {
 			Boolean optifineInstalled = false;
 			try {
@@ -198,30 +199,31 @@ public class FancyGUI {
 		obfuscatedClassNames.put("azl", "GuiDispenser");
 		obfuscatedClassNames.put("azm", "GuiScreenConfigureWorld");
 		obfuscatedClassNames.put("azo", "GuiScreenCreateOnlineWorld");
-		obfuscatedClassNames.put("azp", "ThreadCreateOnlineWorldScreen");
-		obfuscatedClassNames.put("azr", "GuiScreenDisconnectedOnline");
-		obfuscatedClassNames.put("azs", "GuiScreenEditOnlineWorld");
-		obfuscatedClassNames.put("azv", "GuiScreenInvite");
-		obfuscatedClassNames.put("azw", "GuiScreenSelectLocation");
-		obfuscatedClassNames.put("azy", "GuiScreenConfirmation");
-		obfuscatedClassNames.put("azz", "GuiScreenLongRunningTask");
-		obfuscatedClassNames.put("bai", "GuiScreenOnlineServers");
-		obfuscatedClassNames.put("baj", "ThreadOnlineScreen");
-		obfuscatedClassNames.put("bak", "GuiSlotOnlineServerList");
-		obfuscatedClassNames.put("bam", "GuiScreenResetWorld");
-		obfuscatedClassNames.put("bao", "GuiScreenSubscription");
-		obfuscatedClassNames.put("baq", "GuiParticle");
-		obfuscatedClassNames.put("bar", "GuiWinGame");
-		obfuscatedClassNames.put("bdn", "GuiConfirmOpenLink");
-		obfuscatedClassNames.put("bdo", "GuiConnecting");
-		obfuscatedClassNames.put("bdq", "GuiDisconnected");
-		obfuscatedClassNames.put("bdx", "GuiPlayerInfo");
-		obfuscatedClassNames.put("bdy", "GuiDownloadTerrain");
-		obfuscatedClassNames.put("bfs", "CallableScreenName");
-		obfuscatedClassNames.put("bfu", "CallableScreenSize");
-		obfuscatedClassNames.put("bjx", "GuiTexturePacks");
-		obfuscatedClassNames.put("bjy", "GuiTexturePackSlot");
-		obfuscatedClassNames.put("bkg", "GuiMainMenu");
+		obfuscatedClassNames.put("azq", "GuiScreenDisconnectedOnline");
+		obfuscatedClassNames.put("azr", "GuiScreenEditOnlineWorld");
+		obfuscatedClassNames.put("azu", "GuiScreenInvite");
+		obfuscatedClassNames.put("azv", "GuiScreenConfirmation");
+		obfuscatedClassNames.put("azw", "GuiScreenLongRunningTask");
+		obfuscatedClassNames.put("azy", "GuiScreenSelectLocation");
+		obfuscatedClassNames.put("bag", "GuiScreenOnlineServers");
+		obfuscatedClassNames.put("bah", "ThreadOnlineScreen");
+		obfuscatedClassNames.put("bai", "GuiSlotOnlineServerList");
+		obfuscatedClassNames.put("bak", "GuiScreenOnlineServersSubscreen");
+		obfuscatedClassNames.put("bal", "GuiScreenResetWorld");
+		obfuscatedClassNames.put("ban", "GuiScreenSubscription");
+		obfuscatedClassNames.put("bap", "GuiParticle");
+		obfuscatedClassNames.put("baq", "GuiWinGame");
+		obfuscatedClassNames.put("bdm", "GuiConfirmOpenLink");
+		obfuscatedClassNames.put("bdn", "GuiConnecting");
+		obfuscatedClassNames.put("bdp", "GuiDisconnected");
+		obfuscatedClassNames.put("bdw", "GuiPlayerInfo");
+		obfuscatedClassNames.put("bdx", "GuiDownloadTerrain");
+		obfuscatedClassNames.put("bfr", "CallableScreenName");
+		obfuscatedClassNames.put("bft", "CallableScreenSize");
+		obfuscatedClassNames.put("bjw", "GuiTexturePacks");
+		obfuscatedClassNames.put("bjx", "GuiTexturePackSlot");
+		obfuscatedClassNames.put("bkf", "GuiMainMenu");
+		obfuscatedClassNames.put("bkg", "RunnableTitleScreen");
 		obfuscatedClassNames.put("bkh", "ThreadTitleScreen");
 
 		loaded = true;

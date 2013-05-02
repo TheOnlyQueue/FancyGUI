@@ -35,7 +35,7 @@ public class GuiFancySlotServer extends GuiFancySlot {
 			int var3 = GuiFancyMultiplayer.getSelectedServer(this.parentGui);
 			GuiFancyMultiplayer.getAndSetSelectedServer(this.parentGui, par1);
 			ServerData var4 = GuiFancyMultiplayer.getInternetServerList(this.parentGui).countServers() > par1 ? GuiFancyMultiplayer.getInternetServerList(this.parentGui).getServerData(par1) : null;
-			boolean var5 = GuiFancyMultiplayer.getSelectedServer(this.parentGui) >= 0 && GuiFancyMultiplayer.getSelectedServer(this.parentGui) < this.getSize() && (var4 == null || var4.field_82821_f == 60);
+			boolean var5 = GuiFancyMultiplayer.getSelectedServer(this.parentGui) >= 0 && GuiFancyMultiplayer.getSelectedServer(this.parentGui) < this.getSize() && (var4 == null || var4.field_82821_f == 61);
 			boolean var6 = GuiFancyMultiplayer.getSelectedServer(this.parentGui) < GuiFancyMultiplayer.getInternetServerList(this.parentGui).countServers();
 			GuiFancyMultiplayer.getButtonSelect(this.parentGui).enabled = var5;
 			GuiFancyMultiplayer.getButtonEdit(this.parentGui).enabled = var6;
@@ -146,8 +146,8 @@ public class GuiFancySlotServer extends GuiFancySlot {
 			}
 		}
 
-		boolean var7 = var6.field_82821_f > 60;
-		boolean var8 = var6.field_82821_f < 60;
+		boolean var7 = var6.field_82821_f > 61;
+		boolean var8 = var6.field_82821_f < 61;
 		boolean var9 = var7 || var8;
 		this.parentGui.drawString(this.parentGui.fontRenderer, var6.serverName, par2 + 2, par3 + 1, 16777215);
 		this.parentGui.drawString(this.parentGui.fontRenderer, var6.serverMOTD, par2 + 2, par3 + 12, 8421504);
