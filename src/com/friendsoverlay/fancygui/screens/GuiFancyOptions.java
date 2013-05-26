@@ -65,7 +65,10 @@ public class GuiFancyOptions extends GuiFancyScreen {
 
 		this.buttonList.add(new GuiFancyButton(101, this.width / 2 - 77, this.height / 6 + 96 - 6, 100, 20, var1.translateKey("options.video"), 3));
 		this.buttonList.add(new GuiFancyButton(100, this.width / 2 + 77, this.height / 6 + 96 - 6, 100, 20, var1.translateKey("options.controls"), 3));
-		this.buttonList.add(new GuiFancyButton(102, this.width / 2 - 77, this.height / 6 + 120 - 6, 100, 20, var1.translateKey("options.language"), 3));
+		this.buttonList.add(new GuiFancyButton(102, this.width / 2 - 77 - 36 - 4, this.height / 6 + 120 - 6, 100, 20, var1.translateKey("options.language"), 3));
+		if (FancyGUI.shadersInstalled) {
+			this.buttonList.add(new GuiFancyButton(190, this.width / 2 - 36 + 4, this.height / 6 + 120 - 6, 100, 20, "Shaders...", 3));
+		}
 		this.buttonList.add(new GuiFancyButton(103, this.width / 2 + 77, this.height / 6 + 120 - 6, 100, 20, var1.translateKey("options.multiplayer.title"), 3));
 		this.buttonList.add(new GuiFancyButton(105, this.width / 2 - 77, this.height / 6 + 144 - 6, 100, 20, var1.translateKey("options.texture.pack"), 3));
 		this.buttonList.add(new GuiFancyButton(104, this.width / 2 + 77, this.height / 6 + 144 - 6, 100, 20, var1.translateKey("options.snooper.view"), 3));
@@ -114,6 +117,23 @@ public class GuiFancyOptions extends GuiFancyScreen {
 			{
 				this.mc.gameSettings.saveOptions();
 				this.mc.displayGuiScreen(new GuiSnooper(this, this.options));
+			}
+
+			if (par1GuiButton.id == 190 && FancyGUI.shadersInstalled)
+			{
+				this.mc.gameSettings.saveOptions();
+				try {
+					Class c = Class.forName("net.minecraft.src.GuiShaders");
+					Object o = c.getConstructor(GuiScreen.class, GameSettings.class).newInstance(this, this.options);
+					this.mc.displayGuiScreen((GuiScreen) o);
+				} catch (Throwable t) {
+					try {
+						Class c = Class.forName("GuiShaders");
+						Object o = c.getConstructor(GuiScreen.class, GameSettings.class).newInstance(this, this.options);
+						this.mc.displayGuiScreen((GuiScreen) o);
+					} catch (Throwable t2) {
+					}
+				}
 			}
 
 			if (par1GuiButton.id == 200)

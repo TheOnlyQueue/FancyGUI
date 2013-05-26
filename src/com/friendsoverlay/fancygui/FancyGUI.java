@@ -12,6 +12,8 @@ public class FancyGUI {
 	private static HashMap<String, String> obfuscatedClassNames = new HashMap<String, String>();
 	private static Boolean loaded = false;
 	private static Boolean loading = false;
+	public static Boolean optifineInstalled = false;
+	public static Boolean shadersInstalled = false;
 
 	public synchronized static void addFancyScreen(String name, Class c) {
 		load();
@@ -43,23 +45,8 @@ public class FancyGUI {
 		}
 		String className = getClassName(oldScreen.getClass());
 
-		if (className.equalsIgnoreCase("GuiVideoSettings")) {
-			Boolean optifineInstalled = false;
-			try {
-				Class.forName("net.minecraft.src.GuiPerformanceSettingsOF");
-				optifineInstalled = true;
-			} catch (Throwable e) {
-				optifineInstalled = false;
-				try {
-					Class.forName("GuiPerformanceSettingsOF");
-					optifineInstalled = true;
-				} catch (Throwable e2) {
-					optifineInstalled = false;
-				}
-			}
-			if (optifineInstalled) {
-				className = "GuiVideoSettingsOF";
-			}
+		if (className.equalsIgnoreCase("GuiVideoSettings") && optifineInstalled) {
+			className = "GuiVideoSettingsOF";
 		}
 
 		if (!fancyScreensMap.containsKey(className)) {
@@ -95,6 +82,32 @@ public class FancyGUI {
 			return;
 		}
 		loading = true;
+
+		try {
+			Class.forName("net.minecraft.src.GuiPerformanceSettingsOF");
+			optifineInstalled = true;
+		} catch (Throwable e) {
+			optifineInstalled = false;
+			try {
+				Class.forName("GuiPerformanceSettingsOF");
+				optifineInstalled = true;
+			} catch (Throwable e2) {
+				optifineInstalled = false;
+			}
+		}
+
+		try {
+			Class.forName("net.minecraft.src.Shaders");
+			shadersInstalled = true;
+		} catch (Throwable e) {
+			shadersInstalled = false;
+			try {
+				Class.forName("Shaders");
+				shadersInstalled = true;
+			} catch (Throwable e2) {
+				shadersInstalled = false;
+			}
+		}
 
 		fancyScreensMap.clear();
 		obfuscatedClassNames.clear();

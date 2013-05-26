@@ -19,3 +19,4 @@ GuiPerformanceSettingsOF:com.friendsoverlay.fancygui.screens.GuiFancyPerformance
 GuiOtherSettingsOF:com.friendsoverlay.fancygui.screens.GuiFancyOtherSettingsOF
 GuiIngameMenu:com.friendsoverlay.fancygui.screens.GuiFancyIngameMenu
 GuiShareToLan:com.friendsoverlay.fancygui.screens.GuiFancyShareToLan
+GuiShaders:com.friendsoverlay.fancygui.screens.GuiFancyShaders
